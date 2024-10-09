@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="head"> 
+            <h2>Transaction <br>Dashboard</h2> 
+        </div>
+        <div class="table-head">
+            <div class="search-btn">
+                <form action="/listing/show" id="search-form"><button>Search transaction</button></form>
+            </div>
+            <div class="option">
+                
+                <select  name="month" id="option" form="search-form">
+                    <option value="" selected>search month</option>
+                    <option value="1"><a href="/list/show">Jaunary</a></option>
+                    <option value="2" ><a href="/list/show">Febuary</a> </option>
+                    <option value="3" ><a href="/list/show">March</a> </option>
+                    <option value="4" ><a href="/list/show">April</a> </option>
+                    <option value="5" ><a href="/list/show">May</a> </option>
+                    <option value="6" ><a href="/list/show">June</a> </option>
+                    <option value="7" ><a href="/list/show">July</a> </option>
+                    <option value="8" ><a href="/list/show">August</a> </option>
+                    <option value="9" ><a href="/list/show">September</a> </option>
+                    <option value="10" ><a href="/list/show">Octember</a> </option>
+                    <option value="11" ><a href="/list/show">November</a> </option>
+                    <option value="12" ><a href="/list/show">December</a> </option>
+                </select>
+            </div>
+            </div>
+            
+        <div class="listing">
+            <table >
+            <thead>
+                <tr class="row">
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Sold</th>
+                    <th>image</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <%for(list of allLists){%>
+                    <tr class="row">
+                        <td><%=list.id%></td>
+                        <td><%=list.title%></td>
+                        <td><%=list.description%></td>
+                        <td><%=list.price%></td>
+                        <td><%=list.category%></td>
+                        <td><%=list.sold%></td>
+                        <td><a href="<%= list.image %>"></a>link</td>
+                        
+                    </tr>
+                <%}%>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+    
+</body>
+</html>
+
+
+<td><%=  list.dateOfSale.toString().split("-")[1]%></td>
+
